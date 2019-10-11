@@ -61,7 +61,8 @@ projectRouter.get('/:id/tasks', (req, res) => {
         res.status(200).json(tasks);
     })
     .catch(error => {
-        res.status(500).json({ error: 'There was an error retrieving the tasks for that projejct.'})
+        console.log("task retrieval error", error);
+        res.status(500).json({ error: 'There was an error retrieving the tasks for that project.'})
     })
 
 })

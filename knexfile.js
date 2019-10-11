@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       filename: './data/projects.db3',
       typeCast: function(field, next) {
-        if (field.type == 'TINY' && field.length == 1) {
+        if (field.type == 'TINYINT') {
             return (field.string() == '1'); // 1 = true, 0 = false
         } 
         return next();
