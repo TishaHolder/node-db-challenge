@@ -47,15 +47,13 @@ function addProjects(project){
     })
 }
 
-function getProjectTasks(id){
-
-    
+function getProjectTasks(id){    
 
     return db('projects')
     .join('tasks', 'projects.id', '=', 'tasks.project_id')
     .where({'projects.id': id})
     .select('projects.project_name', 'projects.description', 'tasks.id', 'tasks.description as task_description', 'tasks.notes', 'tasks.completed');    
-
+    
 }
 
 function addTasks(id, task){
